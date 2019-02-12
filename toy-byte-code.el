@@ -403,8 +403,8 @@
           (op-subrcall #'get))
 
          ((= opcode 79)
-          (disp2 "substring")
-          (op-subrcall #'substring))
+          (dispN "substring" 3)
+          ($push (apply #'substring ($poplistN 3))))
 
          ((= opcode 80)
           (disp2 "concat2")
