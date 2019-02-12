@@ -770,10 +770,11 @@
 
          ((= opcode 182)
           (fetch8)
-          (dispp "discardN" operand)
-          (unless (zerop (logand operand 8))
-            ($poke (1- (logand operand 7)) ($pop)))
-          (cl-decf top (logand operand 7)))
+          (dispN "discardN" operand)
+          (unless (zerop (logand operand #x80))
+            (setq operand (logand operand #x7f))
+            ($poke (1- operand) ($pop)))
+          (cl-decf top operand))
 
          ;; switch
          ((= opcode 183)
