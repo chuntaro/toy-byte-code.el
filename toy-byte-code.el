@@ -379,8 +379,8 @@
           (op-subrcall #'aref))
 
          ((= opcode 73)
-          (disp2 "aset")
-          (op-subrcall #'aset))
+          (dispN "aset" 3)
+          ($push (apply #'aset ($poplistN 3))))
 
          ((= opcode 74)
           (disp1 "symbol-value")
