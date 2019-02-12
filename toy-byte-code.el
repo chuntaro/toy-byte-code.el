@@ -331,7 +331,7 @@
           ($push (listp ($pop))))
 
          ((= opcode 61)
-          (disp1 "eq")
+          (disp2 "eq")
           (op-subrcall #'eq))
 
          ((= opcode 62)
