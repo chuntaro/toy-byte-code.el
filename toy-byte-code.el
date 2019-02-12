@@ -744,12 +744,12 @@
 
          ((= opcode 175)
           (fetch8)
-          (debugf "%s %S\n" (format-instruction "listN") ($listN operand))
+          (dispN "listN" operand)
           ($push ($poplistN operand)))
 
          ((= opcode 176)
           (fetch8)
-          (debugf "%s %S\n" (format-instruction "concatN") ($listN operand))
+          (dispN "concatN" operand)
           ($push (apply #'concat ($poplistN operand))))
 
          ((= opcode 177)
