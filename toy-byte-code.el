@@ -752,10 +752,8 @@
           (dispN "concatN" operand)
           ($push (apply #'concat ($poplistN operand))))
 
-         ((= opcode 177)
-          (fetch8)
-          (debugf "%s %S\n" (format-instruction "insertN") ($listN operand))
-          ($push (apply #'insert ($poplistN operand))))
+         ;; insertN
+         ;; ((= opcode 177))
 
          ((= opcode 178)
           (fetch8)
