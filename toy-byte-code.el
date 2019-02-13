@@ -656,29 +656,37 @@
          ;; match-end
          ;; ((= opcode 149))
 
-         ;; upcase
-         ;; ((= opcode 150))
+         ((= opcode 150)
+          (disp1 "upcase")
+          ($push (upcase ($pop))))
 
-         ;; downcase
-         ;; ((= opcode 151))
+         ((= opcode 151)
+          (disp1 "downcase")
+          ($push (downcase ($pop))))
 
-         ;; stringeqlsign
-         ;; ((= opcode 152))
+         ((= opcode 152)
+          (disp2 "stringeqlsign")
+          (op-subrcall #'string=))
 
-         ;; stringlss
-         ;; ((= opcode 153))
+         ((= opcode 153)
+          (disp2 "stringlss")
+          (op-subrcall #'string<))
 
-         ;; equal
-         ;; ((= opcode 154))
+         ((= opcode 154)
+          (disp2 "equal")
+          (op-subrcall #'equal))
 
-         ;; nthcdr
-         ;; ((= opcode 155))
+         ((= opcode 155)
+          (disp2 "nthcdr")
+          (op-subrcall #'nthcdr))
 
-         ;; elt
-         ;; ((= opcode 156))
+         ((= opcode 156)
+          (disp2 "elt")
+          (op-subrcall #'elt))
 
-         ;; member
-         ;; ((= opcode 157))
+         ((= opcode 157)
+          (disp2 "member")
+          (op-subrcall #'member))
 
          ((= opcode 158)
           (disp2 "assq")
