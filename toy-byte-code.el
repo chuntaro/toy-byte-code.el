@@ -713,7 +713,7 @@
           ($push (cdr-safe ($pop))))
 
          ((= opcode 164)
-          (disp1 "nconc")
+          (disp2 "nconc")
           (op-subrcall #'nconc))
 
          ((= opcode 165)
