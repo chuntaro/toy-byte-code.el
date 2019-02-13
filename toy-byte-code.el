@@ -778,10 +778,12 @@
 
          ((= opcode 182)
           (fetch8)
-          (dispN "discardN" operand)
+          (if (zerop (logand operand #x80))
+              (dispN "discardN" operand)
+            (dispN "discardN-preserve-tos" (logand operand #x7f)))
           (unless (zerop (logand operand #x80))
             (setq operand (logand operand #x7f))
-            ($poke (1- operand) ($pop)))
+            ($poke operand (TOS)))
           (cl-decf top operand))
 
          ;; switch
