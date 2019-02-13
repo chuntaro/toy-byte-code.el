@@ -340,7 +340,7 @@
 
          ((= opcode 63)
           (disp1 "not")
-          (op-subrcall #'null))
+          ($push (not ($pop))))
 
          ((= opcode 64)
           (disp1 "car")
